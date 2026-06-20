@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import CuratePost from "./components/curatePost";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center w-full h-screen bg-white">
-      <div className="flex flex-col items-start justify-center w-xl h-screen gap-5">
+    <div className="flex items-center justify-center w-full min-h-screen h-auto bg-white pt-20 pb-20">
+      <div className="flex flex-col items-start justify-center w-xl min-h-screen h-auto gap-5">
         <div className="flex flex-col items-start justify-center gap-4.25">
           <div className="flex items-center justify-center w-11.25 aspect-square">
             <Image
@@ -28,7 +29,14 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-start justify-center gap-3.5">
           <p className="text-black font-inter font-medium text-[14px]">
-            A software engineer and designer, born and raised in Kerala.
+            A software engineer and designer, born and raised in{""}
+            <Link
+              href="https://www.google.com/search?q=kerala&ie=UTF-8"
+              target="_blank"
+              className="underline underline-offset-2 pl-1 decoration-1 decoration-dotted"
+            >
+              Kerala
+            </Link>
           </p>
           <p className="text-black font-inter font-medium text-[14px]">
             After two years of freelancing, I am now building Eschaton — a
@@ -72,6 +80,7 @@ export default function Home() {
             </Link>
           </p>
         </div>
+        <CuratePost />
       </div>
     </div>
   );

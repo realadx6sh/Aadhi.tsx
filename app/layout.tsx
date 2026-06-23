@@ -6,6 +6,7 @@ import {
   Tiro_Devanagari_Hindi,
 } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,13 +20,18 @@ const geistMono = Geist_Mono({
 
 const inter = Inter({
   variable: "--font-inter",
-  weight: ["400", "500"],
+  weight: ["300", "400", "500"],
   subsets: ["latin"],
 });
 
 const tiroDevanagariHindi = Tiro_Devanagari_Hindi({
   variable: "--font-tiro",
   weight: ["400"],
+});
+
+const perfectDOS = localFont({
+  src: "../public/fonts/perfectDOS.ttf",
+  variable: "--font-dos",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${tiroDevanagariHindi.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${tiroDevanagariHindi.variable} ${perfectDOS.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

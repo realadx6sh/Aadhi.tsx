@@ -12,6 +12,7 @@
   --font-mono: var(--font-geist-mono);
   --font-inter: var(--font-inter);
   --font-tiro: var(--font-tiro);
+  --font-dos: var(--font-dos);
 }
 
 @media (prefers-color-scheme: dark) {
